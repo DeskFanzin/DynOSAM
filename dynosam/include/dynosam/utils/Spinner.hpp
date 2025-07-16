@@ -27,6 +27,7 @@
 
 #include <functional>
 #include <atomic>
+#include <string>
 
 #include <chrono>
 #include <memory>
@@ -141,7 +142,7 @@ private:
   const std::chrono::milliseconds delay_;  //! constructed from the period
 };
 
-template <typename DurationRepT = std::int64_t, typename DurationT = std::milli>
+template <typename DurationRepT, typename DurationT>
 LoopingSpinner::LoopingSpinner(Evoke func, const std::string& name,
                                std::chrono::duration<DurationRepT, DurationT> period)
   : Spinner(std::bind(&LoopingSpinner::spin, this), name, false), spinOnce_(func), delay_(period)

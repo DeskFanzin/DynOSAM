@@ -105,6 +105,8 @@ add_library(${PROJECT_NAME} SHARED ${SRC_FILES})
 
 ament_target_dependencies(${PROJECT_NAME}
   ${TARGET_DEPS}
+  cv_bridge
+  ament_index_cpp
 )
 
 target_link_libraries(${PROJECT_NAME}

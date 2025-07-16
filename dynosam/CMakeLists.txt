@@ -161,6 +161,7 @@ add_library(${PROJECT_NAME} SHARED
 # Eigen3
 
 ament_target_dependencies(${PROJECT_NAME}
+  ament_index_cpp
   rclcpp
   std_msgs
   sensor_msgs

@@ -23,6 +23,8 @@
 
 #pragma once
 #include <iostream>
+#include <fstream>  // ✅ Required for std::ifstream and std::ofstream
+
 #include <cstdio>
 #include <cstdlib>
 #define BOOST_NO_CXX11_SCOPED_ENUMS
