@@ -1,5 +1,4 @@
-#!/usr/bin/python3
-
+#!/home/lognavbom/dynosam_venv/bin/python3
 #TODO: refactor to experimental yaml file like Kimera?
 def parser():
     import argparse
