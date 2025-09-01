@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:latest
 FROM osrf/ros:humble-desktop-full
 
-MAINTAINER Jesse Morris "jesse.morris@sydney.edu.au"
+MAINTAINER Gabriel Martins "gabriel08martins03@furg.br"
 
 
 # To avoid tzdata asking for geographic location...
@@ -36,7 +36,7 @@ RUN apt-get update && \
     (apt-get install -y nlohmann-json3-dev || apt-get install -y nlohmann-json-dev)
 
 
-RUN python3 -m pip install pylatex evo setuptools pre-commit scipy argcomplete black pre-commit
+RUN python3 -m pip install "numpy==1.24.4" pylatex evo setuptools pre-commit scipy argcomplete black pre-commit
 
 
 WORKDIR /root/
@@ -104,7 +104,7 @@ RUN apt-get update && apt-get install -y libgflags2.2 libgflags-dev libgoogle-gl
 # Install xvfb to provide a display to container for GUI realted testing.
 RUN apt-get update && apt-get install -y xvfb python3-dev python3-setuptools
 
-RUN pip3 install setuptools pre-commit scipy matplotlib argcomplete
+RUN pip3 install setuptools pre-commit scipy matplotlib argcomplete gtsam 
 
 # install CSparse
 RUN DEBIAN_FRONTEND=noninteractive apt install -y libsuitesparse-dev
