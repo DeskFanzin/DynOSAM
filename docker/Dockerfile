@@ -104,6 +104,13 @@ RUN apt-get update && apt-get install -y libgflags2.2 libgflags-dev libgoogle-gl
 # Install xvfb to provide a display to container for GUI realted testing.
 RUN apt-get update && apt-get install -y xvfb python3-dev python3-setuptools
 
+RUN apt-get update && apt-get install -y texlive-latex-base texlive-latex-extra texlive-latex-recommended \
+texlive-fonts-recommended texlive-fonts-extra \
+cm-super cm-super-minimal \
+# optional helpful utilities
+apt-file texdoc \
+
+
 RUN pip3 install setuptools pre-commit scipy matplotlib argcomplete gtsam 
 
 # install CSparse
