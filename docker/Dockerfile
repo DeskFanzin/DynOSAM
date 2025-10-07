@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:latest
 FROM osrf/ros:humble-desktop-full
 
-MAINTAINER Gabriel Martins "gabriel08martins03@furg.br"
+LABEL maintainer="Gabriel Martins <gabriel08martins03@furg.br>"
 
 
 # To avoid tzdata asking for geographic location...
@@ -102,19 +102,19 @@ RUN cd opengv/build && \
 RUN apt-get update && apt-get install -y libgflags2.2 libgflags-dev libgoogle-glog0v5 libgoogle-glog-dev
 
 # Install xvfb to provide a display to container for GUI realted testing.
-RUN apt-get update && apt-get install -y xvfb python3-dev python3-setuptools
+RUN apt-get update && apt-get install -y xvfb python3-dev python3-setuptools 
 
 RUN apt-get update && apt-get install -y texlive-latex-base texlive-latex-extra texlive-latex-recommended \
 texlive-fonts-recommended texlive-fonts-extra \
-cm-super cm-super-minimal \
+cm-super cm-super-minimal     
 # optional helpful utilities
-apt-file texdoc \
+#apt-file texdoc 
 
 
 RUN pip3 install setuptools pre-commit scipy matplotlib argcomplete gtsam 
 
 # install CSparse
-RUN DEBIAN_FRONTEND=noninteractive apt install -y libsuitesparse-dev
+RUN DEBIAN_FRONTEND=noninteractive apt install -y libsuitesparse-dev 
 
 
 RUN mkdir -p /home/user/dev_ws/src/core
